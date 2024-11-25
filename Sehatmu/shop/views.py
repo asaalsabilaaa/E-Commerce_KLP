@@ -48,13 +48,13 @@ def checkout(request):
     cart.items.all().delete()  # Hapus semua item di keranjang setelah checkout
     return render(request, 'shop/order_confirmation.html', {'order': order})
 
-# View untuk menambahkan ulasan produk (jika ada model ulasan)
+# View untuk menambahkan ulasan produk 
 @login_required
 def add_review(request, product_id):
     product = get_object_or_404(Produk, id=product_id)  # Ambil produk berdasarkan ID
     if request.method == 'POST':
         rating = request.POST.get('rating')  # Ambil rating dari form
         comment = request.POST.get('comment')  # Ambil komentar dari form
-        # Buat ulasan baru (sesuaikan dengan model ulasan jika ada)
+        # Buat ulasan baru 
         product.review_set.create(user=request.user, rating=rating, comment=comment)
     return redirect('product_detail', slug=product.slug)

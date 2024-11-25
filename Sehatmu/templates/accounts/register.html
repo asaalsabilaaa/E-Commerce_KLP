@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <!-- Tambahkan link stylesheet di sini -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={{ STATIC_VERSION }}">
-</head>
-<body>
-    <h1>Halaman Register</h1>
-    <!-- Form register -->
-    <form method="POST" action="{% url 'register' %}">
-        {% csrf_token %}
-        <!-- Fields -->
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Register</button>
-    </form>
-</body>
-</html>
-
 
 {%block content%}
 <h2>Register</h2>

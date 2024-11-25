@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Tambahkan link stylesheet di sini -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={{ STATIC_VERSION }}">
-</head>
-<body>
-    <h1>Halaman Login</h1>
-    <!-- Form login -->
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        <!-- Fields -->
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
-
 
 {%block content%}
 <div class="service-container-password">
